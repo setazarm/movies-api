@@ -10,16 +10,12 @@ app.use(cors());
 app.use(express.json())
 
 // Setup movie routes
-app.use('/movies', require('./routes/movieRoutes'));
+app.use('/movies', movieRoutes);
 
-mongoose
-    .connect(
-        process.env.URI, { useNewUrlParser: true, useUnifiedTopology: true }
-        
+// Connect to database
 
-        ,
-        { useNewUrlParser: true, useUnifiedTopology: true }
-    )
+mongoose 
+    .connect(process.env.URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Database connected! '))
     .catch((err) => console.log('Database is not connected! ', err.message));
 
