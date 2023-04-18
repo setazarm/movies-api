@@ -1,5 +1,10 @@
 # movies-api
 
+## tasks:
+-*initialazing the project and database structure -Setare*
+-*movieModel- Philip-Peter*
+-*useModel -Setare*
+-*authentication -Setare*
 
 ├── controllers/
 │   ├── movieController.js
@@ -11,7 +16,6 @@
 │   └── userModel.js
 ├── routes/
 │   ├── movieRoutes.js
-│   ├── genreRoutes.js
 │   └── userRoutes.js
 ├── middleware/
 │   ├── authMiddleware.js

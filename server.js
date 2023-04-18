@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import Movie from "./models/movieSchema.js"
 import cors from "cors"
+import usersRoute from "./routes/usersRoute.js"
 const app = express();
 
 dotenv.config();
@@ -23,4 +24,5 @@ mongoose
     .then(() => console.log('Database connected! '))
     .catch((err) => console.log('Database is not connected! ', err.message));
 
-app.listen(3001, () => console.log(`The server is listening on port ${process.env.PORT}`));
+app.use("/users",usersRoute)
+app.listen(4000, () => console.log(`The server is listening on port ${process.env.PORT}`));
