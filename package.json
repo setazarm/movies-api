@@ -1,7 +1,7 @@
 {
   "name": "movies-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "├── controllers/\r │   ├── movieController.js\r │   ├── genreController.js\r │   └── userController.js\r ├── models/\r │   ├── movieModel.js\r │   ├── genreModel.js\r │   └── userModel.js\r ├── routes/\r │   ├── movieRoutes.js\r │   ├── genreRoutes.js\r │   └── userRoutes.js\r ├── middleware/\r │   ├── authMiddleware.js\r │   └── errorMiddleware.js\r ├── app.js\r └── package.json",
   "main": "server.js",
   "type": "module",
   "scripts": {
