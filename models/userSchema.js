@@ -13,7 +13,10 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  favoriteMovies:[{type:Schema.Types.ObjectId,
+  ref:"Movie"
+  }]
 }, { timestamps: true });
 
 const User = model('User', userSchema);

@@ -63,3 +63,16 @@ export const deleteUser=async(req,res)=>{
     }
 
 }
+export const addMovieToUser=async(req,res)=>{
+    const{id}=req.params
+    try{
+        const user= await User.findById(req.user._id)
+        user.favoriteMovies.push(id)
+        await user.save()
+        res.json({success:true,data:user})
+    }catch(err){
+        res.json({success:false, message:err.message})
+
+    }
+
+}
