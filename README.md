@@ -25,3 +25,4 @@
 
 -----
 
+ add admin- only admin can add movies
