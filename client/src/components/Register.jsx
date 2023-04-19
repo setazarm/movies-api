@@ -23,7 +23,7 @@ const Register = () => {
         })
     }
   return (
-    <div>Register
+    <div>
         <form onSubmit={submitHandler} >
            <label htmlFor="">Name <input type="text" name='name' /></label> 
            <label htmlFor="">Email <input type="email" name='email' /></label> 
