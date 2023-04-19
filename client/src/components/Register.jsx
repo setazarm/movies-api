@@ -15,7 +15,7 @@ const Register = () => {
         axios.post(" http://localhost:4000/users",JSON.stringify(user),{headers:{"Content-Type":"application/json"}})
         .then(res=>{
             if(res.data.success){
-             navigate("/login")
+             navigate("/")
             }else{
                 console.log(res)
                setError(res.data.message)
