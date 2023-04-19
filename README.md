@@ -1,23 +1,5 @@
 # movies-api
+## This is a simple RESTful API that provides information about movies.
 
 
-├── controllers/
-│   ├── movieController.js
-│   ├── genreController.js
-│   └── userController.js
-├── models/
-│   ├── movieModel.js
-│   ├── genreModel.js
-│   └── userModel.js
-├── routes/
-│   ├── movieRoutes.js
-│   ├── genreRoutes.js
-│   └── userRoutes.js
-├── middleware/
-│   ├── authMiddleware.js
-│   └── errorMiddleware.js
-├── app.js
-└── package.json
-
------
 

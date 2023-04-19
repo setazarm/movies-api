@@ -1,0 +1,31 @@
+{
+  "name": "movies-api",
+  "version": "1.0.0",
+  "description": "├── controllers/\r │   ├── movieController.js\r │   ├── genreController.js\r │   └── userController.js\r ├── models/\r │   ├── movieModel.js\r │   ├── genreModel.js\r │   └── userModel.js\r ├── routes/\r │   ├── movieRoutes.js\r │   ├── genreRoutes.js\r │   └── userRoutes.js\r ├── middleware/\r │   ├── authMiddleware.js\r │   └── errorMiddleware.js\r ├── app.js\r └── package.json",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/setazarm/movies-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/setazarm/movies-api/issues"
+  },
+  "homepage": "https://github.com/setazarm/movies-api#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.3"
+  }
+}
