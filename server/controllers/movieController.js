@@ -3,8 +3,20 @@ import Movie from "../models/movieSchema.js"
 
 export const getAllMovies = async (req, res) => {
     try {
-        const movies = await Movie.find();
+        const {year,director}=req.query
+        console.log(year,director)
+        if(year){
+            let numberYear=Number(year)
+            const movies = await Movie.find({Year:numberYear});
         res.json(movies);
+        }else if(director){
+            const movies = await Movie.find({Director:director});
+            res.json(movies);
+        }else{
+            const movies = await Movie.find();
+            res.json(movies);
+        }
+       
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
