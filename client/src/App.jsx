@@ -1,6 +1,7 @@
 
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
+import MovieCard from './components/MovieCard'
 import Register from './components/Register'
 function App() {
   
@@ -8,6 +9,7 @@ function App() {
     <BrowserRouter>
     <div className="App">
      <Register/>
+     <MovieCard/>
     </div>
     </BrowserRouter>
   )
