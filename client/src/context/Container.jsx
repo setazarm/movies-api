@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { MyContext } from "./context.js"; 
+import { useState } from "react";
+import { MyContext } from "./context"; 
 
 
 
