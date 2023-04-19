@@ -1,6 +1,6 @@
 # movies-api
 ### This is a simple RESTful API and full stack app that provides information about movies. Users can access the data using the following endpoints:
-
+### base url: http://localhost:4000
 ## Endpoints
 
 * GET /movies: Returns a list of all movies.
