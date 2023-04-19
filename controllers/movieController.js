@@ -1,7 +1,7 @@
-const Movie = require('../models/movieSchema');
+import Movie from "../models/movieSchema.js"
 
-// Controller functions for movie routes
-exports.getAllMovies = async (req, res) => {
+
+export const getAllMovies = async (req, res) => {
     try {
         const movies = await Movie.find();
         res.json(movies);
@@ -10,9 +10,10 @@ exports.getAllMovies = async (req, res) => {
     }
 };
 
-exports.getMovieById = async (req, res) => {
+export const getMovieById = async (req, res) => {
     try {
-        const movie = await Movie.findById(req.params.id);
+        const {id}= req.params
+        const movie = await Movie.findById(id);
         if (!movie) {
             return res.status(404).json({ message: 'Movie not found' });
         }
@@ -22,7 +23,7 @@ exports.getMovieById = async (req, res) => {
     }
 };
 
-exports.createMovie = async (req, res) => {
+export const createMovie = async (req, res) => {
     try {
         const movie = new Movie(req.body);
         const savedMovie = await movie.save();
@@ -32,7 +33,7 @@ exports.createMovie = async (req, res) => {
     }
 };
 
-exports.updateMovie = async (req, res) => {
+export const updateMovie = async (req, res) => {
     try {
         const movie = await Movie.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (!movie) {
@@ -43,3 +44,15 @@ exports.updateMovie = async (req, res) => {
         res.status(400).json({ message: err.message });
     }
 };
+
+
+export const deleteMovie=async(req,res)=>{
+    try{
+        const {id}=req.params
+        const deletedMovie=await Movie.findByIdAndRemove(id)
+        res.json(deletedMovie)
+
+    }catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+}

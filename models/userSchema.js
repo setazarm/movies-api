@@ -16,7 +16,12 @@ const userSchema = new Schema({
   },
   favoriteMovies:[{type:Schema.Types.ObjectId,
   ref:"Movie"
-  }]
+  }],
+  role:{
+    type:String,
+    default:"user",
+    enum:["user","admin"]   
+},
 }, { timestamps: true });
 
 const User = model('User', userSchema);

@@ -1,5 +1,6 @@
 import User from "../models/userSchema.js"
-
+import jwt from "jsonwebtoken"
+import bcrypt from "bcrypt"
 export const getAllUsers =async (req,res)=>{
     try{
         const Users =await User.find()
@@ -32,6 +33,8 @@ export const getSingleUser=async(req,res)=>{
 export const addNewUser= async(req,res)=>{
   try{
      const newUser= new User(req.body)
+     const hashedPassword= bcrypt.hashSync(newUser.password, 10)
+     newUser.password=hashedPassword
      await newUser.save()
      res.json({success:true, data:newUser})
   }catch(err){
@@ -75,4 +78,26 @@ export const addMovieToUser=async(req,res)=>{
 
     }
 
+}
+
+
+export const loginUser= async(req,res)=>{
+    try{
+const {email,password}= req.body;
+const user= await User.findOne({email})
+if(user){
+    const verifyPassword=bcrypt.compareSync(password,user.password)
+    if(verifyPassword){
+        const token= jwt.sign({_id:user._id,email:user.email},process.env.SIGNATURE,{expiresIn:"1h",issuer:"setare"} )
+        res.header("token",token).json({success:true,data:user})
+    }else{
+        res.json({success:false, message:"password dosen't match"})
+       }
+}else{
+    res.json({success:false, message:"email dosen't exist"})
+}
+    }catch(err){
+        res.json({success:false, message:err.message})
+    
+    }
 }
