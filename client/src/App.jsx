@@ -1,6 +1,7 @@
 
 import { BrowserRouter,Routes, Route } from 'react-router-dom'
 import './App.css'
+import Documentation from './components/Documentation'
 import LoginForm from './components/LoginForm'
 import MovieCard from './components/MovieCard'
 import Navbar from './components/Navbar'
@@ -16,6 +17,7 @@ function App() {
 <Route path="/" element={<LoginForm/>} />
 <Route path="/register" element={<Register/>}/>
 <Route path="/movies" element={<MovieCard/>} />
+<Route path="/documentation" element={<Documentation/>} />
       </Routes>
     </div>
     </BrowserRouter>
