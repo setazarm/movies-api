@@ -6,6 +6,7 @@ import LoginForm from './components/LoginForm'
 import MovieCard from './components/MovieCard'
 import Navbar from './components/Navbar'
 import Register from './components/Register'
+ import Profile from './components/Profile'
 function App() {
   
   return (
@@ -18,6 +19,7 @@ function App() {
 <Route path="/register" element={<Register/>}/>
 <Route path="/movies" element={<MovieCard/>} />
 <Route path="/documentation" element={<Documentation/>} />
+<Route path="/profile" element={<Profile/>} />
       </Routes>
     </div>
     </BrowserRouter>
