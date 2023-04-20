@@ -29,12 +29,23 @@ const LoginForm = () => {
     })
    }
   return (
-    <div>Login 
-        <form onSubmit={loginUser}>
-      <label>Email: <input type="email" name="email" /> </label><br />
-      <label>Password: <input type="password" name="password" /> </label><br />
-      <button>login</button>
-    </form>
+    <div style={{ 
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      backgroundColor: '#f0f0f0',
+      padding: '1rem',
+      borderRadius: '0.5rem',
+      width:"60%"
+    }}>
+      <h2 style={{ marginBottom: '1rem' }}>Login</h2>
+      <form onSubmit={loginUser} style={{ width: '60%' }}>
+        <label style={{ marginBottom: '0.5rem' }}>Email:</label>
+        <input type="email" name="email" style={{ width: '100%', padding: '0.5rem', borderRadius: '0.3rem' }} />
+        <label style={{ marginBottom: '0.5rem', marginTop: '1rem' }}>Password:</label>
+        <input type="password" name="password" style={{ width: '100%', padding: '0.5rem', borderRadius: '0.3rem' }} />
+        <button style={{ marginTop: '1rem', padding: '0.5rem', backgroundColor: '#4caf50', color: 'white', border: 'none', borderRadius: '0.3rem' }}>Login</button>
+      </form>
     </div>
   )
 }
