@@ -9,10 +9,13 @@ const MovieCard = () => {
           
             setMovies(res.data)
         })
-    })
+    },[])
+
     const handleAddToFavorite = (movieId) => {
+     // fetch(`http://localhost:4000/users/fav/${movieId}`,)
+   console.log(movieId)
         axios.get(`http://localhost:4000/users/fav/${movieId}`, {
-           headers:{"token":localStorage.getItem("token")}
+           headers:{"token":localStorage.getItem("token"),"Content-Type":"text/plain"}
         }).then(res => {
           
         }).catch(error => {
