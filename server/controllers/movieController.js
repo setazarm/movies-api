@@ -4,7 +4,7 @@ import Movie from "../models/movieSchema.js"
 export const getAllMovies = async (req, res) => {
     try {
         const {year,director}=req.query
-        console.log(year,director)
+        //console.log(year,director)
         if(year){
             let numberYear=Number(year)
             const movies = await Movie.find({Year:numberYear});
