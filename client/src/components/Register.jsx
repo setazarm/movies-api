@@ -23,15 +23,21 @@ const Register = () => {
         })
     }
   return (
-    <div>
-        <form onSubmit={submitHandler} >
-           <label htmlFor="">Name <input type="text" name='name' /></label> 
-           <label htmlFor="">Email <input type="email" name='email' /></label> 
-           <label htmlFor="">password <input type="password" name='password' /></label> 
-           {error&& <p>{error}</p>}
-           <button>Submit</button>
-        </form>
-    </div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+  <form onSubmit={submitHandler} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <label htmlFor="name" style={{ marginBottom: '10px' }}>Name: </label>
+    <input type="text" name='name' id='name' style={{ marginBottom: '20px', padding: '5px', borderRadius: '5px', border: '1px solid gray' }} />
+
+    <label htmlFor="email" style={{ marginBottom: '10px' }}>Email: </label>
+    <input type="email" name='email' id='email' style={{ marginBottom: '20px', padding: '5px', borderRadius: '5px', border: '1px solid gray' }} />
+
+    <label htmlFor="password" style={{ marginBottom: '10px' }}>Password: </label>
+    <input type="password" name='password' id='password' style={{ marginBottom: '20px', padding: '5px', borderRadius: '5px', border: '1px solid gray' }} />
+
+    {error && <p style={{ color: 'red' }}>{error}</p>}
+    <button style={{ padding: '10px', backgroundColor: 'blue', color: 'white', borderRadius: '5px', border: 'none' }}>Submit</button>
+  </form>
+</div>
   )
 }
 
