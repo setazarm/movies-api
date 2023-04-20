@@ -15,9 +15,12 @@ const LoginForm = () => {
     }
     axios.post("http://localhost:4000/users/login",JSON.stringify(data),{headers:{"Content-Type":"application/json"}})
     .then(res=>{
+      console.log("here res",res)
         if(res.data.success){
+          localStorage.setItem("token",res.headers.token)
             setUser(res.data.data)
-            localStorage.setItem("token",res.headers.token)
+            console.log(res.headers.token)
+           
             navigate("/movies")
         }else{
             alert(res.data.message)

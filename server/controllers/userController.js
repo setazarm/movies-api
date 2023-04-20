@@ -68,6 +68,7 @@ export const deleteUser=async(req,res)=>{
 }
 export const addMovieToUser=async(req,res)=>{
     const{id}=req.params
+    console.log("here movie id",id)
     try{
         const user= await User.findById(req.user._id)
         user.favoriteMovies.push(id)
@@ -89,6 +90,7 @@ if(user){
     const verifyPassword=bcrypt.compareSync(password,user.password)
     if(verifyPassword){
         const token= jwt.sign({_id:user._id,email:user.email},process.env.SIGNATURE,{expiresIn:"1h",issuer:"setare"} )
+        console.log(token)
         res.header("token",token).json({success:true,data:user})
     }else{
         res.json({success:false, message:"password dosen't match"})

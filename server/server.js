@@ -7,9 +7,9 @@ import movieRoute from "./routes/movieRoutes.js"
 const app = express();
 
 dotenv.config();
-app.use(cors());
-app.use(express.json())
 
+app.use(express.json())
+app.use(cors({origin:"http://localhost:5173", exposedHeaders:["token"]}))
 
 
 
