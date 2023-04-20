@@ -70,10 +70,18 @@ export const addMovieToUser=async(req,res)=>{
     const{id}=req.params
     console.log("here movie id",id)
     try{
-        const user= await User.findById(req.user._id)
-        user.favoriteMovies.push(id)
-        await user.save()
+        // const user= await User.findById(req.user._id)
+
+        // if(!(user.favoriteMovies.includes(id))){
+        //     user.favoriteMovies.push(id)
+        // }
+        
+        // await user.save()
+        if(!(req.user.favoriteMovies.includes(id))){
+        const user=await User.findByIdAndUpdate(req.user._id,{$push:{favoriteMovies:id}},{new:true}).populate("favoriteMovies")
         res.json({success:true,data:user})
+        }
+       
     }catch(err){
         res.json({success:false, message:err.message})
 
