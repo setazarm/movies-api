@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext} from 'react';
 import { Navigate } from 'react-router-dom';
-import axios from 'axios';
 import { MyContext } from '../context/context';
 
 export default function Profile() {
@@ -21,7 +20,7 @@ export default function Profile() {
               <h2>{user.name}</h2>
               <h3>Favorite Movies:</h3>
               <ul>
-                {user.favoriteMovies.map((movie) => (
+                {user?.favoriteMovies.map((movie) => (
                   <li key={movie.id}>{movie.Title}</li>
                 ))}
               </ul>

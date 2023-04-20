@@ -17,8 +17,9 @@ const Register = () => {
             if(res.data.success){
              navigate("/")
             }else{
-                console.log(res)
-               setError(res.data.message)
+                console.log("res",res)
+               setError(res.data.message[0].myError)
+               alert(error)
             }
         })
     }
