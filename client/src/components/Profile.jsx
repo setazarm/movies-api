@@ -11,12 +11,11 @@ export default function Profile() {
     setUser(null);
   };
 
-
   if (user) {
     return (
-      <div>
-        <h1>Profile</h1>
-        <div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <h1 style={{ marginBottom: '1rem' }}>Profile</h1>
+        <div style={{ width: '50%', textAlign: 'center' }}>
           {user && (
             <>
               <h2>{user.name}</h2>
