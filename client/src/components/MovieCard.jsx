@@ -30,7 +30,7 @@ const MovieCard = () => {
       flexWrap: 'wrap',
       justifyContent: 'space-between',
       maxWidth: '80%',
-      margin: '0 auto'
+      margin: '2em auto'
     }}>
       {movies.map(movie => {
         return (

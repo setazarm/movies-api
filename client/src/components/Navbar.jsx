@@ -5,18 +5,22 @@ import { MyContext } from '../context/context'
 
 export default function Navbar() {
   const { user,setUser} = useContext(MyContext);
+ 
   const navStyle = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#333",
-    padding: "10px"
+    padding: "10px",
+    marginBottom:"1em",
+    marginTop: "2em"
   };
 
   const linkStyle = {
-    color: "#fff",
+    color: "#939187",
     textDecoration: "none",
-    marginRight: "10px"
+    margin: "20px",
+    
   };
 
   if(user){
@@ -43,8 +47,8 @@ export default function Navbar() {
         </div>
       </nav>
     )
-  }
-}
+  }}
+
 
 
 

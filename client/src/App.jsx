@@ -1,6 +1,5 @@
-
+import "./App.css"
 import { BrowserRouter,Routes, Route } from 'react-router-dom'
-//import './App.css'
 import Documentation from './components/Documentation'
 import LoginForm from './components/LoginForm'
 import MovieCard from './components/MovieCard'

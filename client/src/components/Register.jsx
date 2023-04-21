@@ -36,7 +36,7 @@ const Register = () => {
     <input type="password" name='password' id='password' style={{ marginBottom: '20px', padding: '5px', borderRadius: '5px', border: '1px solid gray' }} />
 
     {error && <p style={{ color: 'red' }}>{error}</p>}
-    <button style={{ padding: '10px', backgroundColor: 'blue', color: 'white', borderRadius: '5px', border: 'none' }}>Submit</button>
+    <button style={{ padding: '10px', backgroundColor: '#5c5a50', color: 'white', borderRadius: '5px', border: 'none' }}>Submit</button>
   </form>
 </div>
   )

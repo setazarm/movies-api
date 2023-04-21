@@ -33,10 +33,13 @@ const LoginForm = () => {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      backgroundColor: '#f0f0f0',
-      padding: '1rem',
+      backgroundColor: '6b6855',
+      padding: '2rem',
       borderRadius: '0.5rem',
-      width:"60%"
+      width:"60%",
+      color:"#5c5a50",
+      fontSize:"2em",
+      fontFamily: "#5c5a50"
     }}>
       <h2 style={{ marginBottom: '1rem' }}>Login</h2>
       <form onSubmit={loginUser} style={{ width: '60%' }}>
@@ -44,7 +47,7 @@ const LoginForm = () => {
         <input type="email" name="email" style={{ width: '100%', padding: '0.5rem', borderRadius: '0.3rem' }} />
         <label style={{ marginBottom: '0.5rem', marginTop: '1rem' }}>Password:</label>
         <input type="password" name="password" style={{ width: '100%', padding: '0.5rem', borderRadius: '0.3rem' }} />
-        <button style={{ marginTop: '1rem', padding: '0.5rem', backgroundColor: '#4caf50', color: 'white', border: 'none', borderRadius: '0.3rem' }}>Login</button>
+        <button style={{ marginTop: '1rem', padding: '0.5rem', backgroundColor: '#5c5a50', color: 'white', border: 'none', borderRadius: '0.3rem' }}>Login</button>
       </form>
     </div>
   )
